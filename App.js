@@ -1,24 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
+import 'react-native-gesture-handler';
 import { StyleSheet, Text, View, Button, Alert} from 'react-native';
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import AppNavigator  from './navigation/AppNavigator';
 
 export default function App() {
   return (
-
-    <View style={styles.container}>
-      <Text style={styles.box}>Welcome to ChatApp!</Text>
-      <View style={styles.fixToText}>
-        <Button
-          title="Sign In"
-          onPress={() => Alert.alert('Left button pressed')}
-        />
-        <Button
-          title="Continue as Guest"
-          onPress={() => Alert.alert('Right button pressed')}
-        />
-        </View>
-      <StatusBar style="auto" />
-    </View>
-
+        <AppNavigator />
   );
 }
 
@@ -46,3 +36,18 @@ const styles = StyleSheet.create({
     },
 
 });
+
+//<View style={styles.container}>
+//      <Text style={styles.box}>Welcome to ChatApp!</Text>
+//      <View style={styles.fixToText}>
+//        <Button
+//          title="Sign In"
+//          onPress={() => Alert.alert('Left button pressed')}
+//        />
+//        <Button
+//          title="Continue as Guest"
+//          onPress={() => Alert.alert('Right button pressed')}
+//        />
+//        </View>
+//      <StatusBar style="auto" />
+//    </View>
